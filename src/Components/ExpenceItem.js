@@ -1,9 +1,16 @@
+
+import "../Components/ExpenceItem.css"
 const ExpenceItem = () => {
+    const expenceName = "Food"
+    const expenceDate = new Date().toLocaleDateString()
+    const expencePrice = 200
     return (
         <>
-            <h1>Food RS 100</h1>
-            <h1>Petrol Rs 100</h1>
-            <h1>Movie Rs 200</h1>
+            <div className="expences">
+                <div className="expenceitems"><h2>{expenceDate}</h2></div>
+                <div className="expenceitems"><h2>{expenceName}</h2></div>
+                <div className="expenceitems"><h2>{expencePrice}</h2></div>
+            </div>
 
         </>
     )

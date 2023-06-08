@@ -1,0 +1,9 @@
+.expences {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    border: 2p solid blue;
+    background-color: rgb(17, 17, 63);
+    color: white;
+}
