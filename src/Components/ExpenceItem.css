@@ -1,10 +1,11 @@
 .expences {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 2rem;
-    border: 2p solid blue;
-    background-color: rgb(17, 17, 63);
+    border: 2px solid rgb(112, 112, 225);
+    border-radius: 7px;
+    background-color: rgb(101, 101, 193);
     color: white;
-    width: 40%;
+    width: 90%;
+    padding: 10px;
 }

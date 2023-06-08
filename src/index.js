@@ -4,8 +4,10 @@ import App from "./App";
 import "./index.css"
 
 ReactDOM.render(
-    <div className="hi">
-        <App />
+    <div className="Container">
+        <div className="items">
+            <App />
+        </div>
     </div>
     , document.getElementById("root"))
 
