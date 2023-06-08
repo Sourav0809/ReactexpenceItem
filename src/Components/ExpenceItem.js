@@ -1,15 +1,16 @@
 
 import "../Components/ExpenceItem.css"
-const ExpenceItem = () => {
-    const expenceName = "Food"
-    const expenceDate = new Date().toLocaleDateString()
-    const expencePrice = 200
+import React from "react";
+
+const ExpenceItem = (props) => {
+
+
     return (
         <>
             <div className="expences">
-                <div className="expenceitems"><h2>{expenceDate}</h2></div>
-                <div className="expenceitems"><h2>{expenceName}</h2></div>
-                <div className="expenceitems"><h2>{expencePrice}</h2></div>
+                <div className="expenceitems"><h2>{props.Name}</h2></div>
+                <div className="expenceitems"><h2>{props.Price}</h2></div>
+                <div className="expenceitems"><h2>{props.Date}</h2></div>
             </div>
 
         </>
