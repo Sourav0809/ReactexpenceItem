@@ -1,4 +1,4 @@
-import ExpenceItem from "./Components/ExpenceItem";
+import ExpenceItem from "./Components/Expences/ExpenceItem";
 import React from "react";
 import "./App.css"
 
