@@ -1,6 +1,6 @@
 .expences {
     display: grid;
-    grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(4, 150px);
     align-items: center;
     justify-content: space-between;
     border: 2px solid rgb(112, 112, 225);
