@@ -19,7 +19,7 @@ const ExpenceItem = (props) => {
                 <div className="expenceitems"><h2>{props.Name}</h2></div>
                 <div className="expenceitems"><h2>{CurrPrice} $</h2></div>
                 <div className="expenceDate"><ExpenceDate Date={props.Date} /></div>
-                <div className="btn"><button onClick={onlcickHandeler}>{props.btnTitle}</button></div>
+                <div className="btn"><button className="ExpenceBtn" onClick={onlcickHandeler}>{props.btnTitle}</button></div>
             </div>
 
 

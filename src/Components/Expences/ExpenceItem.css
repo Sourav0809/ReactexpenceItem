@@ -10,3 +10,11 @@
     width: 90%;
     padding: 15px;
 }
+
+.ExpenceBtn {
+    padding: 5px 10px;
+    background-color: rgb(208, 132, 102);
+    border-radius: 7px;
+    cursor: pointer;
+
+}

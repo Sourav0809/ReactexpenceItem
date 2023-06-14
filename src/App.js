@@ -1,6 +1,8 @@
 import ExpenceItem from "./Components/Expences/ExpenceItem";
 import React from "react";
 import "./App.css"
+import './Components/NewExpence/ExpenceForm'
+
 
 const App = () => {
   const Expences = [
@@ -14,8 +16,8 @@ const App = () => {
 
   return (
     <>
-      {Expences.map((item) => {
 
+      {Expences.map((item) => {
         return (<ExpenceItem Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
       })}
 
