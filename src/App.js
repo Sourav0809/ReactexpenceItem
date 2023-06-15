@@ -18,7 +18,7 @@ const App = () => {
     <>
 
       {Expences.map((item) => {
-        return (<ExpenceItem Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
+        return (<ExpenceItem key={item.id} Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
       })}
 
     </>
