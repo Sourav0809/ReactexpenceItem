@@ -3,7 +3,7 @@ import './ExpenceForm.css'
 
 
 
-const ExpenceForm = () => {
+const ExpenceForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredPrice, setEnteredPrice] = useState('')
@@ -25,13 +25,17 @@ const ExpenceForm = () => {
     // submit the inputs
     const formSubmit = (e) => {
         e.preventDefault()
-        console.log(
-            {
-                expanceName: enteredTitle,
-                Price: enteredPrice,
-                date: new Date(enteredDate)
-            }
-        )
+        const newExpenceData = {
+            expenceName: enteredTitle,
+            Price: enteredPrice,
+            date: new Date(enteredDate)
+        }
+        props.onSaveExpenceHandeler(newExpenceData)
+
+
+        setEnteredTitle("")
+        setEnteredPrice("")
+        setEnteredDate("")
     }
 
 
@@ -40,11 +44,11 @@ const ExpenceForm = () => {
     return <div className='ExpenceForm'>
         <form onSubmit={formSubmit} className='main-form'>
             <label className='form-label'>ExpenceName</label>
-            <input type='text' className='form-input ' onChange={expenceNameHandeler} />
+            <input type='text' className='form-input ' value={enteredTitle} onChange={expenceNameHandeler} />
             <label className='form-label'>ExpencePrice</label>
-            <input type='number' className='form-input' onChange={expencePriceHandeler} />
+            <input type='number' className='form-input' value={enteredPrice} onChange={expencePriceHandeler} />
             <label className='form-label'>ExpenceDate</label>
-            <input type='date' className='form-input ' onChange={expenceDateHandeler} />
+            <input type='date' className='form-input ' value={enteredDate} onChange={expenceDateHandeler} />
             <input type='submit' className='input-btn' />
         </form>
     </div>

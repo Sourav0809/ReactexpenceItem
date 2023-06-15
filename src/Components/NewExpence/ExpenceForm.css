@@ -1,6 +1,7 @@
 .ExpenceForm {
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 .main-form {

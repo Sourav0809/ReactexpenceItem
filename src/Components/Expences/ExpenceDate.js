@@ -6,9 +6,9 @@ const ExpenceDate = (props) => {
     const year = props.Date.getFullYear()
     return <div className="expence_date">
         <Card>
-            <h2 className='expence_date__year'>{year}</h2>
-            <h2 className='expence_date__month'>{month}</h2>
-            <h2 className='expence_date__day'>{day}</h2>
+            <div className='expence_date__year'>{year}</div>
+            <div className='expence_date__month'>{month}</div>
+            <div className='expence_date__day'>{day}</div>
         </Card>
     </div>
 }
