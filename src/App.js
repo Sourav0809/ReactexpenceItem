@@ -1,7 +1,8 @@
 import ExpenceItem from "./Components/Expences/ExpenceItem";
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
 import './Components/NewExpence/ExpenceForm'
+import NewExpence from "./Components/NewExpence/NewExpence";
 
 
 const App = () => {
@@ -14,12 +15,31 @@ const App = () => {
     { id: 6, expenceName: "Movies", Price: 250, date: new Date(2021, 4, 12) }
   ]
 
+  const [currData, updatedData] = useState(Expences)
+
+
+  console.log(currData);
+
+  const saveExpenceHandeler = (expence) => {
+    updatedData(
+      [...currData, expence]
+    )
+  }
+
+  console.log()
   return (
     <>
+      <NewExpence onAddExpence={saveExpenceHandeler} />
+      <div className="Container">
+        <div className="items">
 
-      {Expences.map((item) => {
-        return (<ExpenceItem key={item.id} Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
-      })}
+          {currData.map((item) => {
+            return (<ExpenceItem key={item.id} Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
+          })}
+
+        </div>
+      </div>
+
 
     </>
 
