@@ -22,8 +22,23 @@ const ExpenceForm = () => {
     }
 
 
+    // submit the inputs
+    const formSubmit = (e) => {
+        e.preventDefault()
+        console.log(
+            {
+                expanceName: enteredTitle,
+                Price: enteredPrice,
+                date: new Date(enteredDate)
+            }
+        )
+    }
+
+
+
+
     return <div className='ExpenceForm'>
-        <form className='main-form'>
+        <form onSubmit={formSubmit} className='main-form'>
             <label className='form-label'>ExpenceName</label>
             <input type='text' className='form-input ' onChange={expenceNameHandeler} />
             <label className='form-label'>ExpencePrice</label>
