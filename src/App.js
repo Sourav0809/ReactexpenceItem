@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import "./App.css"
 import './Components/NewExpence/ExpenceForm'
 import NewExpence from "./Components/NewExpence/NewExpence";
-
+import Heading from "./Components/Heading/Heading";
+import ExpenceFiiter from "./Components/Expences/ExpenceFilter";
 
 const App = () => {
   const Expences = [
@@ -26,15 +27,25 @@ const App = () => {
     )
   }
 
-  console.log()
+  // for filter 
+
+  const [filteredYear, setfilterdYear] = useState('')
+  const filterChangeHandeler = (selectedYear) => {
+    setfilterdYear(selectedYear)
+    console.log(selectedYear);
+  }
+
+
   return (
     <>
+      <Heading />
+      <ExpenceFiiter selected={filteredYear} onchangeFilter={filterChangeHandeler} />
       <NewExpence onAddExpence={saveExpenceHandeler} />
       <div className="Container">
         <div className="items">
 
           {currData.map((item) => {
-            return (<ExpenceItem key={item.id} Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
+            return (<ExpenceItem Name={item.expenceName} Price={item.Price} Date={item.date} btnTitle={"Delete Expence"} />)
           })}
 
         </div>

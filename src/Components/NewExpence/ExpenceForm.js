@@ -46,9 +46,9 @@ const ExpenceForm = (props) => {
             <label className='form-label'>ExpenceName</label>
             <input type='text' className='form-input ' value={enteredTitle} onChange={expenceNameHandeler} />
             <label className='form-label'>ExpencePrice</label>
-            <input type='number' className='form-input' value={enteredPrice} onChange={expencePriceHandeler} />
+            <input type='number' min='0.01' step='0.01' className='form-input' value={enteredPrice} onChange={expencePriceHandeler} />
             <label className='form-label'>ExpenceDate</label>
-            <input type='date' className='form-input ' value={enteredDate} onChange={expenceDateHandeler} />
+            <input type='date' min='2019-01-01' max='2022-12-31' className='form-input ' value={enteredDate} onChange={expenceDateHandeler} />
             <input type='submit' className='input-btn' />
         </form>
     </div>
