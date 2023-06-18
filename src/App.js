@@ -5,6 +5,7 @@ import './Components/NewExpence/ExpenceForm'
 import NewExpence from "./Components/NewExpence/NewExpence";
 import Heading from "./Components/Heading/Heading";
 import ExpenceFiiter from "./Components/Expences/ExpenceFilter";
+import ExpenceChart from "./Components/Expences/ExpenceChart";
 
 const App = () => {
   const Expences = [
@@ -12,10 +13,9 @@ const App = () => {
     { id: 2, expenceName: "Wooden Table", Price: 600, date: new Date(2021, 5, 12) },
     { id: 3, expenceName: "Toilet Papper", Price: 800, date: new Date(2020, 6, 12) },
     { id: 4, expenceName: "Burger", Price: 100, date: new Date(2020, 10, 10) },
-    { id: 5, expenceName: "Petrol", Price: 4150, date: new Date(2019, 5, 12) },
+    { id: 5, expenceName: "Petrol", Price: 4150, date: new Date(2018, 5, 12) },
     { id: 6, expenceName: "Movies", Price: 250, date: new Date(2021, 4, 12) },
-    { id: 7, expenceName: "Shopping", Price: 1250, date: new Date(2018, 4, 12) },
-    { id: 8, expenceName: "Petrol", Price: 2500, date: new Date(2018, 4, 12) }
+    { id: 7, expenceName: "Shopping", Price: 1250, date: new Date(2018, 4, 12) }
   ]
 
   const [currData, updatedData] = useState(Expences)
@@ -36,7 +36,7 @@ const App = () => {
     setfilterdYear(selectedYear)
   }
 
-  const filteredExpence = Expences.filter((expenceValue) => {
+  const filteredExpence = currData.filter((expenceValue) => {
     return expenceValue.date.getFullYear().toString() === filteredYear
   })
 
@@ -50,11 +50,18 @@ const App = () => {
     })
   }
 
+  // display form btn 
+
+
+
+
+
   return (
     <>
       <Heading />
       <ExpenceFiiter selected={filteredYear} onchangeFilter={filterChangeHandeler} />
       <NewExpence onAddExpence={saveExpenceHandeler} />
+      <ExpenceChart expences={filteredExpence} />
       <div className="Container">
         <div className="items">
           {displayExpence}
