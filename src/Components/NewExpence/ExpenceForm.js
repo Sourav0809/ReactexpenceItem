@@ -49,7 +49,9 @@ const ExpenceForm = (props) => {
             <input type='number' min='0.01' step='0.01' className='form-input' value={enteredPrice} onChange={expencePriceHandeler} />
             <label className='form-label'>ExpenceDate</label>
             <input type='date' min='2019-01-01' max='2022-12-31' className='form-input ' value={enteredDate} onChange={expenceDateHandeler} />
+            <button type='button' className='input-btn' onClick={props.onCancelHandeler}>Cancel</button>
             <input type='submit' className='input-btn' />
+
         </form>
     </div>
 }
